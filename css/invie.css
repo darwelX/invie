@@ -54,7 +54,7 @@ input:focus, textarea:focus {
 }
 
 .contenedor {
-  width: 800px;
+  max-width: 800px; /* se obtiene el mismo efecto del dedia query pero con menos codigo */
   margin: auto;
   position: relative;
 }
@@ -275,8 +275,56 @@ input:focus, textarea:focus {
 
 
 @media screen and (max-width: 800px) {
-  body {
-    background: peru;
-    border: 15px solid lightblue;
+  /*.contenedor {
+    width: auto;  -esto se hace para resetear el ancho ya que esta declarado arriba- re ajusta las medidas de la caja tomando en cuenta todo el modelo de caja (pading margin height) 
+    max-width: 800px;  y luego si se fija el valor 
+  }*/
+
+  /* portada */
+  .titulo {
+    font-size: 45px;
+    margin-top: 30px;
   }
+
+  .title-a {
+    font-size: 18px;
+  } 
+
+  .portada {
+    height: auto;
+  } 
+
+  .portada .button {
+    margin-bottom: 30px;
+    display: inline-block; /* se cambia el display para que aplique la propiedad margin ya que button es una ancla y su display es inline */
+  }
+  /* portada*/
+
+
+  /* guitarras */
+  .guitarras {
+    text-align: center;
+  }
+  .izquierda, .derecha {
+    float: none; /* se aplica resets a los elementos */
+    position: static; /* se aplica resets a los elementos */
+  }
+
+  .title-b{
+    margin: 0;
+  }
+
+  .guitarra li {
+    list-style: none;
+  }
+
+  .guitarra.b{
+    height: auto;
+  }
+
+  .contenedor-guitarra-b {
+    margin: auto;
+    position: static;
+  }
+  /* guitarras */
 }
