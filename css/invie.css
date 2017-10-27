@@ -318,7 +318,7 @@ input:focus, textarea:focus {
   line-height: 40px;
   border-radius: 40px;
   background: #395667;
-  display: inline-block;
+  display: none;
   text-align: center;
   position: absolute;
   left: 20px;
@@ -455,6 +455,10 @@ input:focus, textarea:focus {
 
 @media screen and (max-width: 500px){
   /*portada*/
+  .burger-button{
+    display: inline-block;
+  }
+  
   .portada .contenedor{
     position: static;
   }
