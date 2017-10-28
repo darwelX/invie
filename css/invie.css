@@ -325,6 +325,7 @@ input:focus, textarea:focus {
   top: 20px;
   cursor: pointer;
   z-index: 3;
+  color: white;
 }
 /*tablets*/
 @media screen and (max-width: 800px) {
@@ -332,6 +333,15 @@ input:focus, textarea:focus {
     width: auto;  -esto se hace para resetear el ancho ya que esta declarado arriba- re ajusta las medidas de la caja tomando en cuenta todo el modelo de caja (pading margin height) 
     max-width: 800px;  y luego si se fija el valor 
   }*/
+  /*predcios*/
+  .tabla {
+    margin: 50px 20px;
+  }
+  .tabla .contenedor{
+    overflow: auto; /*agrega la barra scroll a la tabla */
+    border: 1px solid #273b47;
+  }
+  /*precios*/
 
   /* portada */
   .titulo {
@@ -455,6 +465,13 @@ input:focus, textarea:focus {
 
 @media screen and (max-width: 500px){
   /*portada*/
+  .header {
+    position: static;
+  }
+  .header .contenedor{
+    position: static; /*se resetea la posicion*/
+  }
+
   .burger-button{
     display: inline-block;
   }
