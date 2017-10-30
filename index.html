@@ -38,10 +38,12 @@
     </section>
     <section id="guitarras" class="guitarras contenedor"> <!-- guitarras -->
       <h2>Nuestra guitarras</h2><!-- titulo -->
-      <div class="video-responsive-contenedor">
-        <iframe class="video-responsive-src" width="560" height="315" src="https://www.youtube.com/embed/R1dW8M4EqYY" frameborder="0" allowfullscreen></iframe>
+      <div class="video-demo">
+        <div class="video-responsive-contenedor">
+          <iframe class="video-responsive-src" width="560" height="315" src="https://www.youtube.com/embed/R1dW8M4EqYY" frameborder="0" allowfullscreen></iframe>
+        </div>
       </div>
-      <video src="video/320x240.ogg"></video>
+      <!-- <video src="video/320x240.ogg"></video> -->
       <article class="guitarra"> <!-- guitarra 1 -->
         <img class="derecha" data-src="images/invie-acustica.png|images/invie-acustica2x.png" alt="Guitarra Invie Acustica" width="350"/>
         <div class="contenedor-guitarra-a">
@@ -109,7 +111,10 @@
         </form>
       </div>
     </footer>
+    <!-- con esta libreria hago carga peresosa de imgenesa medida que scroleo en la pagina optimizando el consumo de datos -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+    <!-- esta libreria me permite agregarle gestos a mi página -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <script>
       var $burgerButton = document.getElementById('burger-button');
       var $menu = document.getElementById('menu');
@@ -136,7 +141,21 @@
 
       var bLazy = new Blazy({
           selector: 'img'
-      });     
+      });   
+
+      //Gestos
+      var $body = document.body; /* el gesto en este caso se aplica al body completo de la página*/
+      var gestos = new Hammer($body);
+      gestos.on('swipeleft', function(eve){
+        $menu.classList.remove('active');
+        $burgerButton.classList.remove('icon-close');
+        $burgerButton.classList.add('icon-menu');
+      });
+      gestos.on('swiperight', function(eve){
+        $menu.classList.add('active');
+        $burgerButton.classList.remove('icon-menu');
+        $burgerButton.classList.add('icon-close');
+      });
     </script>
   </body>
 </html>
