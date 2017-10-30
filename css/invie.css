@@ -321,15 +321,22 @@ input:focus, textarea:focus {
   background: #395667;
   display: none;
   text-align: center;
-  position: absolute;
+  position: fixed; /*se cambia a fixed para que el boton siga el recorrido del scroll a lo largo de la pantalla*/
   left: 20px;
   top: 20px;
   cursor: pointer;
   z-index: 3;
   color: white;
 }
+
+.video-demo{
+  margin: 0 auto 83px;
+  max-width: 500px;
+  border: 5px solid #3c5b6e;
+}
+
 /*tablets*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   /*.contenedor {
     width: auto;  -esto se hace para resetear el ancho ya que esta declarado arriba- re ajusta las medidas de la caja tomando en cuenta todo el modelo de caja (pading margin height) 
     max-width: 800px;  y luego si se fija el valor 
@@ -394,6 +401,10 @@ input:focus, textarea:focus {
   .contenedor-guitarra-a {
     padding: 0;
   }
+
+  .video-demo{
+    margin-bottom: 0;
+  }
   /* guitarras */
 }
 
@@ -441,6 +452,7 @@ input:focus, textarea:focus {
 }
 
 @media screen and (max-width: 650px){
+  /* portada */
   .header {
     text-align: center;
   }
@@ -461,11 +473,21 @@ input:focus, textarea:focus {
   .menu ul {
     padding: 0;
   }
-
+  /* portada */
 }
 
 @media screen and (max-width: 500px){
   /*portada*/
+  .portada .button, .formulario .button{
+    padding: .4em;
+    font-size: 2em;
+    align-items: center;
+    display: block;
+  }
+  .precios .header .logotipo{
+    margin: 50px 0;
+  }
+
   .header {
     position: static;
   }
@@ -482,7 +504,7 @@ input:focus, textarea:focus {
   }
   .menu {
     background: rgba(255, 60, 88, .8);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -100%;
     bottom: 0;
@@ -527,7 +549,13 @@ input:focus, textarea:focus {
   }
   /*portada*/
 
+
   /*guitarra*/
+
+   .video-demo {
+      margin: 0 10px;
+   }
+
   .guitarra img{
     width: 200px;
     /*height: auto; si estubiese declarado hay que resetearlo*/
@@ -537,6 +565,13 @@ input:focus, textarea:focus {
    font-size: 40px;
  }
   /*guitarra*/
+
+  /* footer */ 
+
+  .col2{
+    align-items: stretch;
+  }
+  /* footer*/
 }
 
 video {
@@ -560,7 +595,7 @@ video {
 }
 
 /*
-este es un mediaquery para retina
+este es un mediaquery para retina aplicado a la imagen de fondo
 */
 @media screen and (-webkit-min-device-pixel-ratio: 2){
   .background{
