@@ -416,8 +416,12 @@ input:focus, textarea:focus {
   }
   .contacto{
     margin: 0 auto;
+    display: block; /*para que contacto y telefono se vea uno debajo del otro*/
   }
 
+  .contacto a {
+    display: block; /*para que contacto y telefono se vea uno debajo del otro*/
+  }
   .formulario {
     margin: 0 auto;
     display: block;
@@ -426,7 +430,15 @@ input:focus, textarea:focus {
 
   .intereses label{
     display: block;
-    font-size: 16px;
+    font-size: 20px;
+  }
+
+  .sexo label {
+    display: block; /* hace que los radio buton se vea uno debajo del otro*/
+  }
+
+  input[type=text]{
+    margin-bottom: 25px; /*para usabilidad*/
   }
 
   input[type="text"],
